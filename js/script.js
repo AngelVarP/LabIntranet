@@ -23,3 +23,28 @@ loginForm.addEventListener('submit', function(event) {
         }
     }
 });
+
+// script.js - Login
+
+document.getElementById("login-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Evita que el formulario se envíe
+
+    // Obtener datos del formulario
+    const username = document.getElementById("username").value;
+    const role = document.getElementById("role").value;
+
+    // Guardar en localStorage
+    localStorage.setItem("usuario", username);
+    localStorage.setItem("rol", role);
+
+    // Redirigir según el rol
+    if(role === "delegado") {
+        window.location.href = "delegado/delegado.html";
+    } else if(role === "administrador") {
+        window.location.href = "administrador/administrador.html";
+    } else if(role === "instructor") {
+        window.location.href = "instructor/instructor.html";
+    } else {
+        alert("Rol no soportado para esta demo");
+    }
+});
