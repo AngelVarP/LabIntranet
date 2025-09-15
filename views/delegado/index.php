@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Interfaz Delegado</title>
+  <link rel="stylesheet" href="assets/css/delegado.css">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <header>
+    <div class="header-left">
+      <img src="assets/images/logo.png" alt="Logo Lab Química" class="logo">
+      <h2>Sistema de Inventario</h2>
+    </div>
+    <div class="usuario">
+        Usuario: <b></b> | <a href="#" id="cerrarSesion">Cerrar sesión</a>
+    </div>
+  </header>
+
+  <!-- Contenedor de laboratorios -->
+  <div class="contenedor" id="listaLabos">
+    <!-- Aquí se insertarán los laboratorios con JS -->
+  </div>
+
+  <footer>
+      <p>&copy; 2025 Laboratorio Intranet</p>
+  </footer>
+
+  <script src="assets/js/delegado.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?php
+// views/auth/login.php
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Laboratorio Intranet</title>
+    <!-- Conexión a los estilos -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="assets/images/logo.png" alt="Logo Lab Química" class="logo">
+            <div class="user-info">
+                <h2>Ingreso al Sistema de Inventario</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <form id="login-form" class="login-form" method="POST" action="controllers/AuthController.php">
+                <h1>Login</h1>
+                <div class="input-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <div class="role-selection">
+                    <label for="role">Selecciona tu rol</label>
+                    <select id="role" name="role" required>
+                        <option value="delegado">Delegado</option>
+                        <option value="instructor">Instructor</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Laboratorio Intranet</p>
+    </footer>
+
+    <!-- Conexión al JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
