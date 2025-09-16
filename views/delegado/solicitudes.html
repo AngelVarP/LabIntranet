@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes - Delegado</title>
+    <link rel="stylesheet" href="../../assets/css/delegado.css">
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Sistema de Inventario</h1>
+        <button>Cerrar Sesión</button>
+    </div>
+    
+    <div class="main-container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="logo-section">
+                    <h1>Delegado</h1>
+                    <img src="../../assets/images/logo.png" alt="Logo de la Universidad Nacional de Ingeniería">
+                </div>
+                <ul>
+                    <li><a href="delegado.html">Laboratorios</a></li>
+                    <li><a href="reportes.html">Reportes</a></li>
+                    <li class="active"><a href="solicitudes.html">Solicitudes de Material</a></li>
+                    <li><a href="calendario.html">Calendario de Laboratorios</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="content-box">
+                    Solicitudes de Material
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Cantidad</th>
+                                <th>Solicitante</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Balanza Digital</td>
+                                <td>1</td>
+                                <td>Prof. Gómez</td>
+                                <td>15-09-2025</td>
+                                <td>
+                                    <button class="btn-approve">Aprobar</button>
+                                    <button class="btn-reject">Rechazar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ácido Sulfúrico (1L)</td>
+                                <td>2</td>
+                                <td>Prof. Laura</td>
+                                <td>14-09-2025</td>
+                                <td>
+                                    <button class="btn-approve">Aprobar</button>
+                                    <button class="btn-reject">Rechazar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Laboratorio Intranet
+    </div>
+
+    <script src="delegado.js"></script>
+</body>
+</html>
