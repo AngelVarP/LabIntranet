@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Interfaz Delegado</title>
-  <link rel="stylesheet" href="assets/css/delegado.css">
+  <link rel="stylesheet" href="/assets/css/delegado.css">
 </head>
 <body>
 
   <!-- Barra superior -->
   <header>
     <div class="header-left">
-      <img src="assets/images/logo.png" alt="Logo Lab Química" class="logo">
+      <img src="/assets/images/logo.png" alt="Logo Lab Química" class="logo">
       <h2>Sistema de Inventario</h2>
     </div>
     <div class="usuario">
