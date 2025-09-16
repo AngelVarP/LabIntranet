@@ -1,5 +1,10 @@
 <?php
 // views/auth/login.php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+echo "Hola, PHP funciona ✅";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,12 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Laboratorio Intranet</title>
     <!-- Conexión a los estilos -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="assets/images/logo.png" alt="Logo Lab Química" class="logo">
+            <img src="/assets/images/logo.png" alt="Logo Lab Química" class="logo">
             <div class="user-info">
                 <h2>Ingreso al Sistema de Inventario</h2>
             </div>
@@ -35,7 +40,7 @@
                 <div class="role-selection">
                     <label for="role">Selecciona tu rol</label>
                     <select id="role" name="role" required>
-                        <option value="delegado">Delegado</option>
+                          <option value="delegado">Delegado</option>
                         <option value="instructor">Instructor</option>
                         <option value="administrador">Administrador</option>
                     </select>
@@ -50,6 +55,6 @@
     </footer>
 
     <!-- Conexión al JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
