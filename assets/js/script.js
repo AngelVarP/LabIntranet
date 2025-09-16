@@ -3,48 +3,30 @@ const loginForm = document.getElementById('login-form');
 
 // Manejar el envío del formulario
 loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevenir el comportamiento por defecto del formulario (recargar página)
+    event.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar página)
 
+    // Obtener datos del formulario
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const role = document.getElementById('role').value;
 
-    // Validar el login (esto es solo un ejemplo, en un entorno real deberías hacer esto en el servidor)
-    if (username === "" || password === "") {
+    // Validar que los campos no estén vacíos
+    if (username === "" || password === "" || role === "") {
         alert("Por favor, completa todos los campos.");
-    } else {
-        // Simular el acceso según el rol
-        if (role === "admin") {
-            alert("¡Bienvenido Administrador! Accediendo al sistema de inventario.");
-        } else if (role === "maestro") {
-            alert("¡Bienvenido Maestro! Accediendo a las herramientas del laboratorio.");
-        } else if (role === "alumno") {
-            alert("¡Bienvenido Alumno! Accediendo a tus recursos de laboratorio.");
-        }
+        return; // Detiene la ejecución si los campos están vacíos
     }
-});
-
-// script.js - Login
-
-document.getElementById("login-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // Evita que el formulario se envíe
-
-    // Obtener datos del formulario
-    const username = document.getElementById("username").value;
-    const role = document.getElementById("role").value;
 
     // Guardar en localStorage
     localStorage.setItem("usuario", username);
     localStorage.setItem("rol", role);
 
     // Redirigir según el rol
-    if(role === "delegado") {
-        window.location.href = "delegado/delegado.html";
-    } else if(role === "administrador") {
-        window.location.href = "administrador/administrador.html";
-    } else if(role === "instructor") {
-        window.location.href = "instructor/instructor.html";
+    // Las rutas deben ser relativas a la página que carga el script (views/auth/login.php)
+    if (role === "delegado") {
+        window.location.href = "../../views/delegado/delegado.html";
+        alert("¡Bienvenido Delegado! Accediendo a la página del delegado.");
+    //AQUI AGREGUEN SUS ROLES QUE HARAN XDXDXD
     } else {
-        alert("Rol no soportado para esta demo");
+        alert("Rol no soportado para esta demo.");
     }
 });
