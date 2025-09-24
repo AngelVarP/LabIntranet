@@ -1,0 +1,8 @@
+header {
+    display: flex;
+    justify-content: space-between; /* izquierda ↔ derecha */
+    align-items: center;
+    background: #9B1C1C;
+    color: white;
+    padding: 50px 30px;
+}
