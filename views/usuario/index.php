@@ -12,7 +12,7 @@
 
     <header>
         <div class="logo">
-            <img src="icono.png" alt="Logo" class="icono">
+            <img src="assets/images/icono.png" alt="Logo" class="icono">
             <span>LabIntranet</span>
         </div>
         <div class="acciones">
