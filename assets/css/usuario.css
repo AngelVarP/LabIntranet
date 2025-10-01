@@ -1,8 +1,105 @@
 header {
-    display: flex;
-    justify-content: space-between; /* izquierda ↔ derecha */
-    align-items: center;
-    background: #9B1C1C;
-    color: white;
-    padding: 50px 30px;
+    background: #ffffff;
+    color: #333;
+    width: 100%;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
 }
+
+/* El contenedor centra el contenido */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 100px;  /* espacio interno */
+    max-width: auto;   /* ancho máximo del contenido */
+    margin: 0 auto;      /* centra el bloque */
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    header .container {
+        padding: 15px 60px; /* menos espacio a los lados */
+    }
+}
+
+/* Celulares medianos */
+@media (max-width: 768px) {
+    header .container {
+        padding: 15px 40px;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    header .container {
+        padding: 15px 15px;
+    }
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* separación entre logo y texto */
+}
+
+.logo-box {
+    background-color: #9B1C1C; /* rojo */
+    padding: 8px;
+    border-radius: 8px;        /* bordes redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem; /* ~20px */
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-box .icono {
+    width: 80px;      /* tamaño fijo inicial */
+    height: auto;     /* mantiene proporción */
+    max-width: 100%;  /* nunca se deforma ni se sale del contenedor */
+}
+
+.acciones {
+    font-family: 'Jost', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;          /* necesario para que funcione el gap */
+    gap: 20px;              /* separación entre botones */
+}
+
+.acciones button {
+    padding: 12px 24px; /* aumenta el alto y ancho del botón */
+    font-size: 1.1rem;  /* asegura que el texto se vea más grande */
+    border-radius: 65px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.btn-iniciar {
+    background: none;
+    border: none;
+    color: #4B5563;
+}
+
+.btn-iniciar:hover {
+    color: #111827; /* más oscuro al pasar el mouse */
+}
+
+.btn-registrar {
+    background: #B91C1C;
+    border: 5px solid #B91C1C; 
+    color: #fff;
+}
+
+.btn-registrar:hover {
+    background: #991B1B; /* rojo más oscuro */
+    border-color: #991B1B;
+}
+
