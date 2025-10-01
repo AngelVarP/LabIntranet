@@ -32,6 +32,36 @@
         </div>
     </header>
 
+    <section class="hero">
+        <h1>
+            Laboratorio de <br/><span class="highlight">Química y Física</span>
+        </h1>
+    </section>
+
+    <section class="cursos">
+        <div class="contenedor-cursos">
+            
+            <!-- Curso 1 -->
+            <div class="curso">
+                <img src="/assets/images/quimica.png" alt="Curso Química" class="curso-logo">
+                <h2 class="curso-nombre">Curso de Química</h2>
+                <p class="curso-descripcion">
+                    Aprende los fundamentos de la química moderna con prácticas en laboratorio.
+                </p>
+            </div>
+
+            <!-- Curso 2 -->
+            <div class="curso">
+                <img src="/assets/images/fisica.png" alt="Curso Física" class="curso-logo">
+                <h2 class="curso-nombre">Curso de Física</h2>
+                <p class="curso-descripcion">
+                    Explora los principios de la física clásica y experimental de manera aplicada.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     
 </body>
 </html>
