@@ -55,7 +55,7 @@ body {
     flex-direction: column;
     margin-top: 40px;
     margin-bottom: 40px;
-    min-height: 700px; /* Aquí le das más altura */
+    min-height: 700px; /* Altura ajustada */
 }
 
 /* Contenido principal de la página (lo que incluye sidebar y el área de contenido) */
@@ -91,6 +91,7 @@ body {
     width: 100px;
     height: auto;
     border-radius: 50%;
+    /* border: 3px solid #8B0000; <- REMOVIDO POR SOLICITUD */
 }
 
 .sidebar ul {
@@ -166,7 +167,7 @@ body {
     color: #444;
 }
 
-/* ESTILOS PARA LAS OTRAS PÁGINAS */
+/* ESTILOS PARA TABLAS Y CALENDARIO */
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -262,4 +263,114 @@ tr:nth-child(even) {
     position: fixed;
     bottom: 0;
     z-index: 100;
+}
+
+
+/* --- ESTILOS ESPECÍFICOS DEL FORMULARIO DE SOLICITUD (Instructor) --- */
+.request-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-section-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #8B0000;
+}
+
+.request-form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.request-form-container input[type="text"],
+.request-form-container input[type="number"],
+.request-form-container input[type="date"],
+.request-form-container select,
+.request-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para que el padding no desborde el ancho */
+}
+
+/* Estilos para el campo dinámico de materiales */
+#material-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.material-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.material-item select {
+    flex-grow: 1;
+    width: auto; /* Anula el 100% de arriba */
+}
+
+.material-item input[type="number"] {
+    width: 100px;
+    text-align: center;
+}
+
+/* Botones del Formulario */
+.btn-add-item {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.btn-add-item:hover {
+    background-color: #218838;
+}
+
+.btn-delete-item {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+.btn-delete-item:hover {
+    background-color: #c82333;
+}
+
+.btn-submit-request {
+    display: block;
+    width: 100%;
+    background-color: #8B0000;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit-request:hover {
+    background-color: #A32020;
 }
