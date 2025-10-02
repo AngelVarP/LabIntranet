@@ -4,6 +4,44 @@ header {
     width: 100%;
     box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
 }
+    
+/* 🔹 Botón hamburguesa oculto en escritorio */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* 🔹 En pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Menú oculto por defecto en móvil */
+    .acciones {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #fff;
+        position: absolute;
+        top: 70px; /* debajo del header */
+        right: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* Menú activo al hacer click en ☰ */
+    .acciones.active {
+        display: flex;
+    }
+
+    /* Mostrar hamburguesa en móvil */
+    .menu-toggle {
+        display: block;
+    }
+}
 
 /* El contenedor centra el contenido */
 header .container {
@@ -60,17 +98,23 @@ header .container {
 }
 
 .logo-box .icono {
-    width: 80px;      /* tamaño fijo inicial */
-    height: auto;     /* mantiene proporción */
-    max-width: 100%;  /* nunca se deforma ni se sale del contenedor */
+    width: 10vw;   /* 10% del ancho de la ventana */
+    max-width: 80px;
+    min-width: 40px;
+    height: auto;   
 }
 
 .acciones {
     font-family: 'Jost', sans-serif;
     font-weight: 800;
     font-size: 1.1rem;
-    display: flex;          /* necesario para que funcione el gap */
+    display: none;          /* necesario para que funcione el gap */
     gap: 20px;              /* separación entre botones */
+}
+@media (min-width: 768px) {
+    .acciones {
+        display: flex;
+    }
 }
 
 .acciones button {
@@ -149,7 +193,6 @@ header .container {
 
 .curso {
     background: #fff;
-    border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
     flex: 1 1 300px; /* mínimo 300px */
@@ -164,18 +207,97 @@ header .container {
 }
 
 .curso-logo {
-    width: 100px;
-    margin-bottom: 15px;
+    width: clamp(50px, 15vw, 120px);         /* ocupa todo el ancho del contenedor */
+    height: auto;        /* mantiene proporción */
+    margin-bottom: 1.5vw;
 }
 
 .curso-nombre {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
     color: #333;
 }
 
 .curso-descripcion {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     color: #555;
+}
+
+/* 🔹 Footer */
+.footer {
+    background: #30314f;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-family: 'Jost', sans-serif;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo .footer-icon {
+    width: 40px;
+    height: auto;
+}
+
+.footer-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #991B1B; /* rojo del highlight */
+}
+
+.footer-social a img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin: 10px 0;
+    }
 }
