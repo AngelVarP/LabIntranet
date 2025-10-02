@@ -1,0 +1,303 @@
+header {
+    background: #ffffff;
+    color: #333;
+    width: 100%;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+}
+    
+/* 🔹 Botón hamburguesa oculto en escritorio */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* 🔹 En pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Menú oculto por defecto en móvil */
+    .acciones {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #fff;
+        position: absolute;
+        top: 70px; /* debajo del header */
+        right: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* Menú activo al hacer click en ☰ */
+    .acciones.active {
+        display: flex;
+    }
+
+    /* Mostrar hamburguesa en móvil */
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* El contenedor centra el contenido */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 100px;  /* espacio interno */
+    max-width: auto;   /* ancho máximo del contenido */
+    margin: 0 auto;      /* centra el bloque */
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    header .container {
+        padding: 15px 50px; /* menos espacio a los lados */
+    }
+}
+
+/* Celulares medianos */
+@media (max-width: 768px) {
+    header .container {
+        padding: 15px 15px;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    header .container {
+        padding: 15px 15px;
+    }
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* separación entre logo y texto */
+}
+
+.logo-box {
+    background-color: #9B1C1C; /* rojo */
+    padding: 8px;
+    border-radius: 8px;        /* bordes redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-text {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-box .icono {
+    width: 10vw;   /* 10% del ancho de la ventana */
+    max-width: 80px;
+    min-width: 40px;
+    height: auto;   
+}
+
+.acciones {
+    font-family: 'Jost', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: none;          /* necesario para que funcione el gap */
+    gap: 20px;              /* separación entre botones */
+}
+@media (min-width: 768px) {
+    .acciones {
+        display: flex;
+    }
+}
+
+.acciones button {
+    padding: 12px 24px; /* aumenta el alto y ancho del botón */
+    font-size: 1.1rem;  /* asegura que el texto se vea más grande */
+    border-radius: 65px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+    .acciones button {
+        font-size: 0.9rem;
+        padding: 0.5em 1em;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    .acciones button {
+        font-size: 0.8rem;
+        padding: 0.4em 0.8em;
+    }
+}
+
+
+.btn-iniciar {
+    background: none;
+    border: none;
+    color: #4B5563;
+}
+
+.btn-iniciar:hover {
+    color: #111827; /* más oscuro al pasar el mouse */
+}
+
+.btn-registrar {
+    background: #B91C1C;
+    border: 5px solid #B91C1C; 
+    color: #fff;
+}
+
+.btn-registrar:hover {
+    background: #991B1B; /* rojo más oscuro */
+    border-color: #991B1B;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 80px; /* separa del header */
+    font-family: 'Jost', sans-serif;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 5.2rem);
+    font-weight: 700;    /* negrita */
+    color: #333;         /* gris oscuro */
+}
+
+.hero .highlight {
+    color: #991B1B;      /* rojo */
+}
+
+.cursos {
+    margin: 80px auto;
+    padding: 20px;
+    max-width: 1000px;
+    font-family: 'Jost', sans-serif;
+}
+
+.contenedor-cursos {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap; /* en móviles se apilan */
+}
+
+.curso {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 300px; /* mínimo 300px */
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.curso:hover {
+    transform: translateY(-5px);
+}
+
+.curso-logo {
+    width: clamp(50px, 15vw, 120px);         /* ocupa todo el ancho del contenedor */
+    height: auto;        /* mantiene proporción */
+    margin-bottom: 1.5vw;
+}
+
+.curso-nombre {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: bold;
+    margin-bottom: 1vw;
+    color: #333;
+}
+
+.curso-descripcion {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: #555;
+}
+
+/* 🔹 Footer */
+.footer {
+    background: #30314f;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-family: 'Jost', sans-serif;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo .footer-icon {
+    width: 40px;
+    height: auto;
+}
+
+.footer-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #991B1B; /* rojo del highlight */
+}
+
+.footer-social a img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin: 10px 0;
+    }
+}
