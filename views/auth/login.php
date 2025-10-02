@@ -26,8 +26,8 @@
             <form id="login-form" class="login-form" method="POST" action="controllers/AuthController.php">
                 <h1>Login</h1>
                 <div class="input-group">
-                    <label for="username">Usuario</label>
-                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                    <label for="email">Correo</label>
+                    <input type="text" id="email" name="email" placeholder="Ingresa su correo" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Contraseña</label>
@@ -36,12 +36,18 @@
                 <div class="role-selection">
                     <label for="role">Selecciona tu rol</label>
                     <select id="role" name="role" required>
-                          <option value="delegado">Delegado</option>
+                        <option value="delegado">Delegado</option>
                         <option value="instructor">Instructor</option>
                         <option value="administrador">Administrador</option>
                     </select>
                 </div>
+                <br/>
                 <button type="submit" class="btn-login">Iniciar Sesión</button>
+                <!-- Texto debajo del botón -->
+                <p class="register-text">
+                    ¿No tienes cuenta? 
+                    <a href="/views/auth/register.php">Regístrate aquí</a>
+                </p>
             </form>
         </section>
     </main>

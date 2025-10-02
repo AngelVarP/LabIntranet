@@ -1,3 +1,6 @@
+/* ====================
+   RESET GENERAL
+==================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,43 +9,45 @@
 
 html, body {
     height: 100%;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333333;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff; /* Fondo degradado elegante */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: #333;
 }
 
+/* ====================
+   HEADER
+==================== */
 header {
-    background-color: #7b1113; /* Rojo UNI */
-    color: white;
-    padding: 20px 0;
+    background: rgba(123, 17, 19, 0.9); /* semitransparente */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;   /* centramos todo */
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    gap: 15px;
 }
 
 .logo {
-    width: 120px;
+    width: 60px;
     height: auto;
 }
 
-.user-info {
-    font-size: 18px;
-    font-weight: bold;
+.user-info h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
+/* ====================
+   MAIN
+==================== */
 main {
     flex: 1;                     
     display: flex;
@@ -51,79 +56,149 @@ main {
     padding: 20px;
 }
 
+/* ====================
+   LOGIN BOX
+==================== */
 .login-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     width: 100%;
     max-width: 400px;
-    padding: 30px;
-    border-top: 5px solid #7b1113; 
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(123,17,19,0.2), transparent 70%);
+    transform: rotate(25deg);
+    z-index: 0;
 }
 
 .login-container h1 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 25px;
     color: #7b1113;
+    position: relative;
+    z-index: 1;
 }
 
+/* ====================
+   INPUTS Y SELECT
+==================== */
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
 }
 
-.input-group label {
-    font-size: 16px;
-    margin-bottom: 8px;
+.input-group label,
+.role-selection label {
+    font-size: 15px;
+    margin-bottom: 6px;
+    text-align: left;
     display: block;
-    color: #7b1113;
     font-weight: bold;
+    color: #7b1113;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.role-selection {
-    margin-bottom: 20px;
-}
-
+.input-group input, 
 .role-selection select {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    color: #333;
+    transition: border 0.3s, box-shadow 0.3s;
+    appearance: none;         /* ❌ quita estilo feo del navegador */
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none;    /* Firefox */
 }
 
+/* Focus */
+.input-group input:focus,
+.role-selection select:focus {
+    border: 1px solid #7b1113;
+    box-shadow: 0 0 5px rgba(123,17,19,0.3);
+    outline: none;
+}
+
+/* Flechita custom para el select */
+.role-selection {
+    position: relative;
+}
+
+.role-selection::after {
+    content: "▼";
+    position: absolute;
+    right: 14px;
+    top: 65%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #7b1113;
+    pointer-events: none; /* no bloquea el click */
+}
+/* ====================
+   BOTÓN
+==================== */
 .btn-login {
     width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    background-color: #7b1113;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #7b1113;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s, background 0.3s;
+    z-index: 1;
+    position: relative;
 }
 
 .btn-login:hover {
-    background-color: #a52a2a; 
+    background: #a52a2a;
+    transform: scale(1.03);
 }
 
+/* ====================
+   FOOTER
+==================== */
 footer {
-    background-color: #7b1113;
+    background: #5c0d0f;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
     margin-top: auto;   
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
-footer p {
+.register-text {
+    margin-top: 15px;
     font-size: 14px;
+    color: #555;
+}
+
+.register-text a {
+    color: #7b1113;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.register-text a:hover {
+    color: #a52a2a;
+    text-decoration: underline;
 }
