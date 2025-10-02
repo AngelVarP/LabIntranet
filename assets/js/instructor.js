@@ -17,18 +17,15 @@ loginForm.addEventListener('submit', function(event) {
     }
 
     // Guardar en localStorage
-    // Nota: Deberías validar credenciales reales en un servidor antes de guardar.
     localStorage.setItem("usuario", username);
     localStorage.setItem("rol", role);
 
     // Redirigir según el rol
-    if (role === "Delegado") { // Asegúrate que el valor sea 'Delegado' (mayúscula/minúscula)
+    // Las rutas deben ser relativas a la página que carga el script (views/auth/login.php)
+    if (role === "delegado") {
         window.location.href = "../../views/delegado/delegado.html";
         alert("¡Bienvenido Delegado! Accediendo a la página del delegado.");
-    } else if (role === "instructor") { // Usamos 'else if' para otra opción
-        // La ruta debe ser a la página principal del Instructor
-        window.location.href = "../../views/instructor/solicitudes_instructor.html";
-        alert("¡Bienvenido Instructor! Accediendo a la página del instructor.");
+    //AQUI AGREGUEN SUS ROLES QUE HARAN XDXDXD
     } else {
         alert("Rol no soportado para esta demo.");
     }
