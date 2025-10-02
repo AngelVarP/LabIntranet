@@ -43,8 +43,8 @@
             
             <!-- Curso 1 -->
             <div class="curso">
-                <img src="/assets/images/quimica.png" alt="Curso Química" class="curso-logo">
-                <h2 class="curso-nombre">Curso de Química</h2>
+                <img src="/assets/images/usuario/flask-round.svg" alt="Curso Química" class="curso-logo">
+                <h2 class="curso-nombre">Química</h2>
                 <p class="curso-descripcion">
                     Aprende los fundamentos de la química moderna con prácticas en laboratorio.
                 </p>
@@ -52,8 +52,8 @@
 
             <!-- Curso 2 -->
             <div class="curso">
-                <img src="/assets/images/fisica.png" alt="Curso Física" class="curso-logo">
-                <h2 class="curso-nombre">Curso de Física</h2>
+                <img src="/assets/images/usuario/atom.svg" alt="Curso Física" class="curso-logo">
+                <h2 class="curso-nombre">Física</h2>
                 <p class="curso-descripcion">
                     Explora los principios de la física clásica y experimental de manera aplicada.
                 </p>

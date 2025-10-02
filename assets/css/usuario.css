@@ -132,3 +132,50 @@ header .container {
 .hero .highlight {
     color: #991B1B;      /* rojo */
 }
+
+.cursos {
+    margin: 80px auto;
+    padding: 20px;
+    max-width: 1000px;
+    font-family: 'Jost', sans-serif;
+}
+
+.contenedor-cursos {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap; /* en móviles se apilan */
+}
+
+.curso {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 300px; /* mínimo 300px */
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.curso:hover {
+    transform: translateY(-5px);
+}
+
+.curso-logo {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.curso-nombre {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.curso-descripcion {
+    font-size: 1rem;
+    color: #555;
+}
