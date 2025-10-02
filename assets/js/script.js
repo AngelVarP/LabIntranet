@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', function(event) {
     localStorage.setItem("rol", role);
 
     // Redirigir según el rol
-    if (role === "Delegado") { // Asegúrate que el valor sea 'Delegado' (mayúscula/minúscula)
+    if (role === "delegado") { // Asegúrate que el valor sea 'Delegado' (mayúscula/minúscula)
         window.location.href = "../../views/delegado/delegado.html";
         alert("¡Bienvenido Delegado! Accediendo a la página del delegado.");
     } else if (role === "instructor") { // Usamos 'else if' para otra opción
