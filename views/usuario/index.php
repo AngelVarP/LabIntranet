@@ -1,12 +1,12 @@
 <?php
-    
+    $base_url = "http://localhost/mi_proyecto/";
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>LabIntranet</title>
-    <link rel="stylesheet" href="/assets/css/usuario.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>

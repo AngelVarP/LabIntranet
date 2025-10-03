@@ -207,9 +207,20 @@ header .container {
 }
 
 .curso-logo {
-    width: clamp(50px, 15vw, 120px);         /* ocupa todo el ancho del contenedor */
+    width: clamp(40px, 10vw, 80px);
+    padding: 15px; 
+    border-radius: 25%;         
     height: auto;        /* mantiene proporción */
     margin-bottom: 1.5vw;
+}
+/* Específico para Química (primer curso) */
+.curso:nth-child(1) .curso-logo {
+    background-color: #b91c1c; /* rojo */
+}
+
+/* Específico para Física (segundo curso) */
+.curso:nth-child(2) .curso-logo {
+    background-color: #6b7280; /* plomo/gris */
 }
 
 .curso-nombre {
