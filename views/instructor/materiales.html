@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materiales</title>
+  <link rel="stylesheet" href="/assets/css/instructor.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="total">
+      <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
+      <h2 class="logo">Sistema de Inventario</h2>
+    </div>
+    <ul>
+      <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
+      <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
+      <li><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
+      <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
+      <li><a href="materiales.html" class="active"><i class="ri-folder-line"></i> Materiales</a></li>
+      <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
+      <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
+      <li><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
+      <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <header class="header">
+      <h1>Gestión de Materiales</h1>
+      <button class="logout-btn" id="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
+    </header>
+
+    <!-- Subir material -->
+    <section class="upload-section">
+      <h2>Subir nuevo material</h2>
+      <form id="upload-form" enctype="multipart/form-data">
+        <div class="form-row">
+          <label for="curso">Curso:</label>
+          <select id="curso" name="curso">
+            <option value="">Seleccione un curso</option>
+            <option value="FISII2025">Laboratorio de Física II</option>
+            <option value="ELEC12025">Laboratorio de Electrónica I</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Ej: Práctica 1 - Ley de Ohm">
+        </div>
+        <div class="form-row">
+          <label for="archivo">Archivo:</label>
+          <input type="file" id="archivo" name="archivo" accept=".pdf,.docx,.pptx,.png,.jpg,.jpeg">
+        </div>
+        <button type="submit" class="btn-upload">Subir Material</button>
+      </form>
+    </section>
+
+    <!-- Lista de materiales -->
+    <section class="materials-list">
+      <h2>Materiales publicados</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Curso</th>
+            <th>Título</th>
+            <th>Archivo</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="materiales-body">
+          <tr data-material-id="1">
+            <td>Laboratorio de Física II</td>
+            <td>Práctica 1 - Ley de Ohm</td>
+            <td><a href="#" class="file-link">descargar.pdf</a></td>
+            <td>02/10/2025</td>
+            <td>
+              <button class="btn-download">Descargar</button>
+              <button class="btn-delete">Eliminar</button>
+            </td>
+          </tr>
+          <tr data-material-id="2">
+            <td>Laboratorio de Electrónica I</td>
+            <td>Guía de laboratorio</td>
+            <td><a href="#" class="file-link">guia.pdf</a></td>
+            <td>29/09/2025</td>
+            <td>
+              <button class="btn-download">Descargar</button>
+              <button class="btn-delete">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    // Simulación de subida de archivo
+    document.getElementById('upload-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const curso = document.getElementById('curso').value;
+      const titulo = document.getElementById('titulo').value;
+      const archivo = document.getElementById('archivo').files[0];
+      if(!curso || !titulo || !archivo){
+        alert("Completa todos los campos antes de subir.");
+        return;
+      }
+      // Aquí luego harías un fetch POST al backend para subir el archivo
+      alert(`Subiendo: ${titulo} para ${curso}`);
+    });
+
+    // Descargar
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const row = btn.closest('tr');
+        const id = row.dataset.materialId;
+        alert(`Descargar material ID ${id}`);
+        // Ejemplo: window.location.href = `/materiales/descargar.php?id=${id}`;
+      });
+    });
+
+    // Eliminar
+    document.querySelectorAll('.btn-delete').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const row = btn.closest('tr');
+        const id = row.dataset.materialId;
+        if(confirm("¿Seguro que deseas eliminar este material?")){
+          alert(`Eliminando material ID ${id}`);
+          // Aquí luego se llamaría al backend con fetch DELETE
+          row.remove();
+        }
+      });
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      alert('Cerrando sesión...');
+    });
+  </script>
+</body>
+</html>

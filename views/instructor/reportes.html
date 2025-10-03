@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes</title>
+  <link rel="stylesheet" href="/assets/css/instructor.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="total">
+      <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
+      <h2 class="logo">Sistema de Inventario</h2>
+    </div>
+    <ul>
+      <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
+      <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
+      <li><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
+      <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
+      <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
+      <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
+      <li><a href="reportes.html" class="active"><i class="ri-bar-chart-line"></i> Reportes</a></li>
+      <li><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
+      <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <header class="header">
+      <h1>Generación de Reportes</h1>
+      <button class="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
+    </header>
+
+    <!-- Sección filtros -->
+    <section class="report-filters">
+      <div class="filter-group">
+        <label for="curso">Curso</label>
+        <select id="curso">
+          <option value="">Seleccione un curso</option>
+          <option value="fisica2">Laboratorio de Física II</option>
+          <option value="electronica1">Laboratorio de Electrónica I</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="fechaInicio">Desde</label>
+        <input type="date" id="fechaInicio">
+      </div>
+
+      <div class="filter-group">
+        <label for="fechaFin">Hasta</label>
+        <input type="date" id="fechaFin">
+      </div>
+
+      <div class="filter-group">
+        <label for="tipoReporte">Tipo de reporte</label>
+        <select id="tipoReporte">
+          <option value="">Seleccione</option>
+          <option value="asistencia">Asistencia</option>
+          <option value="notas">Notas</option>
+          <option value="materiales">Materiales entregados</option>
+          <option value="peticiones">Peticiones recibidas</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Botones de acción -->
+    <div class="report-actions">
+      <button class="btn-generate">Generar Vista Previa</button>
+      <button class="btn-download">Descargar PDF</button>
+      <button class="btn-download-excel">Descargar Excel</button>
+    </div>
+
+    <!-- Vista previa del reporte -->
+    <section class="report-preview">
+      <h2>Vista previa</h2>
+      <div id="preview-content">
+        <p>Seleccione filtros y genere para ver un resumen aquí.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Simulación simple de preview (cuando haya backend se conectará vía fetch)
+    document.querySelector('.btn-generate').addEventListener('click', () => {
+      const curso = document.getElementById('curso').value || 'Todos los cursos';
+      const tipo = document.getElementById('tipoReporte').value || 'Sin tipo';
+      document.getElementById('preview-content').innerHTML = `
+        <p><strong>Reporte:</strong> ${tipo}</p>
+        <p><strong>Curso:</strong> ${curso}</p>
+        <p><em>Vista previa de datos (ejemplo). Aquí se mostrará una tabla dinámica.</em></p>
+      `;
+    });
+
+    // Simulación botones descargar (listos para conectar a PHP)
+    document.querySelector('.btn-download').addEventListener('click', () => {
+      alert('Aquí llamaría a un endpoint PHP para descargar el PDF.');
+    });
+    document.querySelector('.btn-download-excel').addEventListener('click', () => {
+      alert('Aquí llamaría a un endpoint PHP para descargar el Excel.');
+    });
+  </script>
+</body>
+</html>

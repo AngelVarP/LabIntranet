@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delegados</title>
+  <link rel="stylesheet" href="/assets/css/instructor.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="total">
+      <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
+      <h2 class="logo">Sistema de Inventario</h2>
+    </div>
+    <ul>
+      <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
+      <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
+      <li><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
+      <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
+      <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
+      <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
+      <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
+      <li><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
+      <li><a href="delegados.html" class="active"><i class="ri-team-line"></i> Delegados</a></li>
+    </ul>
+  </aside>
+  <!-- ... mantiene tu header y sidebar tal cual ... -->
+<main class="main-content">
+  <header class="header">
+    <h1>Delegados</h1>
+    <button class="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
+  </header>
+
+  <section>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Curso</th>
+          <th>Grupo</th>
+          <th>Delegado</th>
+          <th>Correo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laboratorio de Física II</td>
+          <td>Grupo A</td>
+          <td>Ana Torres</td>
+          <td>ana.torres@uni.edu.pe</td>
+          <td><button class="btn-edit">Cambiar</button></td>
+        </tr>
+        <tr>
+          <td>Laboratorio de Física II</td>
+          <td>Grupo B</td>
+          <td>Pedro Ruiz</td>
+          <td>pedro.ruiz@uni.edu.pe</td>
+          <td><button class="btn-edit">Cambiar</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Formulario oculto que se mostrará al pulsar "Cambiar" -->
+    <div id="modal-edit" class="modal hidden">
+      <div class="modal-content">
+        <h3>Cambiar Delegado</h3>
+        <label>Nuevo Delegado</label>
+        <input type="text" placeholder="Nombre del delegado">
+        <label>Correo</label>
+        <input type="email" placeholder="correo@uni.edu.pe">
+        <div class="modal-actions">
+          <button class="btn-save">Guardar</button>
+          <button class="btn-cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  
+</body>
+</html>
