@@ -1,108 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horario</title>
-  <link rel="stylesheet" href="/assets/css/instructor.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horario</title>
+<link rel="stylesheet" href="/assets/css/instructor.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="total">
-      <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
-      <h2 class="logo">Sistema de Inventario</h2>
-    </div>
-    <ul>
-      <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
-      <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
-      <li><a href="horario.html" class="active"><i class="ri-calendar-line"></i> Horario</a></li>
-      <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
-      <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
-      <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
-      <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
-      <li><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
-      <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
-    </ul>
-  </aside>
+<aside class="sidebar">
+  <div class="total">
+    <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
+    <h2 class="logo">Sistema de Inventario</h2>
+  </div>
+  <ul>
+    <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
+    <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
+    <li class="active"><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
+    <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
+    <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
+    <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
+    <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
+    <li><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
+    <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
+  </ul>
+</aside>
 
-  <!-- Main content -->
-  <main class="main-content">
-    <header class="header">
-      <h1>Horario Semanal</h1>
-      <button class="logout-btn" id="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
-    </header>
+<main class="main-content">
+  <header class="header">
+    <h1>Horario Semanal</h1>
+    <button class="logout-btn" id="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
+  </header>
 
-    <!-- Filtros -->
-    <section class="filters">
-      <select id="select-curso">
-        <option value="">Todos los cursos</option>
-        <option value="FISII2025">Laboratorio de Física II</option>
-        <option value="ELEC12025">Laboratorio de Electrónica I</option>
-      </select>
-    </section>
+  <section class="filters">
+    <select id="select-curso">
+      <option value="">Todos los cursos</option>
+      <option value="FISII2025">Laboratorio de Física II</option>
+      <option value="ELEC12025">Laboratorio de Electrónica I</option>
+    </select>
+  </section>
 
-    <!-- Horario -->
-    <section class="schedule-table">
-      <table class="styled-table schedule">
-        <thead>
-          <tr>
-            <th>Hora</th>
-            <th>Lunes</th>
-            <th>Martes</th>
-            <th>Miércoles</th>
-            <th>Jueves</th>
-            <th>Viernes</th>
-          </tr>
-        </thead>
-        <tbody id="horario-body">
-          <tr>
-            <td>08:00 - 10:00</td>
-            <td class="event" data-course="FISII2025">Física II - Grupo A</td>
-            <td></td>
-            <td></td>
-            <td class="event" data-course="ELEC12025">Electrónica I</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>10:00 - 12:00</td>
-            <td></td>
-            <td class="event" data-course="FISII2025">Física II - Grupo B</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>14:00 - 16:00</td>
-            <td></td>
-            <td></td>
-            <td class="event" data-course="ELEC12025">Electrónica I - Práctica</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  <section class="schedule-table">
+    <table class="styled-table schedule">
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+        </tr>
+      </thead>
+      <tbody id="horario-body">
+        <tr>
+          <td>08:00 - 10:00</td>
+          <td class="event" data-course="FISII2025">Física II - Grupo A</td>
+          <td></td>
+          <td></td>
+          <td class="event" data-course="ELEC12025">Electrónica I</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10:00 - 12:00</td>
+          <td></td>
+          <td class="event" data-course="FISII2025">Física II - Grupo B</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>14:00 - 16:00</td>
+          <td></td>
+          <td></td>
+          <td class="event" data-course="ELEC12025">Electrónica I - Práctica</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
 
-  <script>
-    // Ejemplo: filtro por curso
-    document.getElementById('select-curso').addEventListener('change', e => {
-      const selected = e.target.value;
-      document.querySelectorAll('.event').forEach(cell => {
-        if (!selected || cell.dataset.course === selected) {
-          cell.style.display = 'table-cell';
-        } else {
-          cell.style.display = 'none';
-        }
-      });
+<script>
+  // Ejemplo: filtro por curso (Lógica LOCAL)
+  document.getElementById('select-curso').addEventListener('change', e => {
+    const selected = e.target.value;
+    document.querySelectorAll('.event').forEach(cell => {
+      // Usamos style.visibility para no alterar el layout
+      if (!selected || cell.dataset.course === selected) {
+        cell.style.visibility = 'visible';
+        cell.style.height = 'auto'; // Asegura que la celda se muestre
+      } else {
+        cell.style.visibility = 'hidden';
+        cell.style.height = '0'; // Oculta el contenido sin cambiar el layout de la tabla
+      }
     });
+  });
 
-    // Logout
-    document.getElementById('logout-btn').addEventListener('click', () => {
-      alert('Cerrando sesión...');
-    });
-  </script>
+  // *** EL CÓDIGO DE LOGOUT FUE ELIMINADO DE AQUÍ ***
+</script>
+
+<script src="/assets/js/instructor.js"></script>
 </body>
 </html>

@@ -1,110 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peticiones</title>
-  <link rel="stylesheet" href="/assets/css/instructor.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peticiones</title>
+<link rel="stylesheet" href="/assets/css/instructor.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="total">
-      <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
-      <h2 class="logo">Sistema de Inventario</h2>
-    </div>
-    <ul>
-      <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
-      <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
-      <li><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
-      <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
-      <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
-      <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
-      <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
-      <li><a href="peticiones.html" class="active"><i class="ri-mail-line"></i> Peticiones</a></li>
-      <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
-    </ul>
-  </aside>
+<aside class="sidebar">
+  <div class="total">
+    <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
+    <h2 class="logo">Sistema de Inventario</h2>
+  </div>
+  <ul>
+    <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
+    <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
+    <li><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
+    <li><a href="notas.html"><i class="ri-edit-2-line"></i> Notas</a></li>
+    <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
+    <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
+    <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
+    <li class="active"><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
+    <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
+  </ul>
+</aside>
 
-  <!-- Main -->
-  <main class="main-content">
-    <header class="header">
-      <h1>Peticiones de Estudiantes</h1>
-      <button class="logout-btn" id="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
-    </header>
+<main class="main-content">
+  <header class="header">
+    <h1>Peticiones de Estudiantes</h1>
+    <button class="logout-btn" id="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
+  </header>
 
-    <!-- Filtros -->
-    <section class="filters">
-      <select id="filtro-curso">
-        <option value="">Todos los cursos</option>
-        <option value="FISII2025">Laboratorio de Física II</option>
-        <option value="ELEC12025">Laboratorio de Electrónica I</option>
-      </select>
-      <select id="filtro-estado">
-        <option value="">Todos los estados</option>
-        <option value="pendiente">Pendiente</option>
-        <option value="aprobada">Aprobada</option>
-        <option value="rechazada">Rechazada</option>
-      </select>
-    </section>
+  <section class="filters">
+    <select id="filtro-curso">
+      <option value="">Todos los cursos</option>
+      <option value="FISII2025">Laboratorio de Física II</option>
+      <option value="ELEC12025">Laboratorio de Electrónica I</option>
+    </select>
+    <select id="filtro-estado">
+      <option value="">Todos los estados</option>
+      <option value="pendiente">Pendiente</option>
+      <option value="aprobada">Aprobada</option>
+      <option value="rechazada">Rechazada</option>
+    </select>
+  </section>
 
-    <!-- Tabla -->
-    <section>
-      <table class="styled-table">
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Curso</th>
-            <th>Delegado</th>
-            <th>Petición</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="peticiones-body">
-          <tr data-peticion-id="1">
-            <td>01/10/2025</td>
-            <td>Física II</td>
-            <td>Ana Torres</td>
-            <td>Reprogramación práctica 3</td>
-            <td><span class="badge pending">Pendiente</span></td>
-            <td>
-              <button class="btn-approve">Aprobar</button>
-              <button class="btn-reject">Rechazar</button>
-            </td>
-          </tr>
-          <tr data-peticion-id="2">
-            <td>28/09/2025</td>
-            <td>Electrónica I</td>
-            <td>Lucía Fernández</td>
-            <td>Material adicional resistencias 10Ω</td>
-            <td><span class="badge approved">Aprobada</span></td>
-            <td>
-              <button class="btn-pending">Pendiente</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  <section>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Curso</th>
+          <th>Delegado</th>
+          <th>Petición</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="peticiones-body">
+        <tr data-peticion-id="1">
+          <td>01/10/2025</td>
+          <td>Física II</td>
+          <td>Ana Torres</td>
+          <td>Reprogramación práctica 3</td>
+          <td><span class="badge pending">Pendiente</span></td>
+          <td>
+            <button class="btn-approve">Aprobar</button>
+            <button class="btn-reject">Rechazar</button>
+          </td>
+        </tr>
+        <tr data-peticion-id="2">
+          <td>28/09/2025</td>
+          <td>Electrónica I</td>
+          <td>Lucía Fernández</td>
+          <td>Material adicional resistencias 10Ω</td>
+          <td><span class="badge approved">Aprobada</span></td>
+          <td>
+            <button class="btn-pending">Pendiente</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
 
-  <script>
-    // Filtrado simple (luego puedes reemplazarlo por llamada AJAX)
-    document.getElementById('filtro-curso').addEventListener('change', e => {
-      alert('Filtro curso: ' + e.target.value);
-    });
-    document.getElementById('filtro-estado').addEventListener('change', e => {
-      alert('Filtro estado: ' + e.target.value);
-    });
+<script>
+  // Filtrado simple (Lógica LOCAL)
+  document.getElementById('filtro-curso').addEventListener('change', e => {
+    alert('Filtro curso: ' + e.target.value);
+  });
+  document.getElementById('filtro-estado').addEventListener('change', e => {
+    alert('Filtro estado: ' + e.target.value);
+  });
 
-    // Cambiar estado petición (simulación)
-    document.querySelectorAll('.btn-approve').forEach(b => b.addEventListener('click', () => alert('Aprobar')));
-    document.querySelectorAll('.btn-reject').forEach(b => b.addEventListener('click', () => alert('Rechazar')));
-    document.querySelectorAll('.btn-pending').forEach(b => b.addEventListener('click', () => alert('Pendiente')));
+  // Cambiar estado petición (simulación) (Lógica LOCAL)
+  document.querySelectorAll('.btn-approve').forEach(b => b.addEventListener('click', () => alert('Aprobar')));
+  document.querySelectorAll('.btn-reject').forEach(b => b.addEventListener('click', () => alert('Rechazar')));
+  document.querySelectorAll('.btn-pending').forEach(b => b.addEventListener('click', () => alert('Pendiente')));
 
-    // Logout
-    document.getElementById('logout-btn').addEventListener('click', () => alert('Cerrando sesión...'));
-  </script>
+  // *** EL CÓDIGO DE LOGOUT FUE ELIMINADO DE AQUÍ ***
+</script>
+
+<script src="/assets/js/instructor.js"></script>
+
 </body>
 </html>
