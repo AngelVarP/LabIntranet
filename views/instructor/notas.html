@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Notas</title>
+  <link rel="stylesheet" href="/assets/css/instructor.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="total">
+      <img class="imagen__logo" src="/assets/images/logo.png" alt="logo-instituto">
+      <h2 class="logo">LabIntranet</h2>
+    </div>
+    <ul>
+      <li><a href="instructor.html"><i class="ri-dashboard-line"></i> Inicio</a></li>
+      <li><a href="cursos.html"><i class="ri-book-2-line"></i> Mis Cursos</a></li>
+      <li><a href="horario.html"><i class="ri-calendar-line"></i> Horario</a></li>
+      <li><a href="notas.html" class="active"><i class="ri-edit-2-line"></i> Notas</a></li>
+      <li><a href="materiales.html"><i class="ri-folder-line"></i> Materiales</a></li>
+      <li><a href="asistencia.html"><i class="ri-checkbox-circle-line"></i> Asistencia</a></li>
+      <li><a href="reportes.html"><i class="ri-bar-chart-line"></i> Reportes</a></li>
+      <li><a href="peticiones.html"><i class="ri-mail-line"></i> Peticiones</a></li>
+      <li><a href="delegados.html"><i class="ri-team-line"></i> Delegados</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <header class="header">
+      <h1>Gestión de Notas</h1>
+      <button class="logout-btn" id="logout-btn"><i class="ri-logout-box-r-line"></i> Cerrar Sesión</button>
+    </header>
+
+    <!-- Filtros -->
+    <section class="filters">
+      <select id="select-curso">
+        <option value="">Seleccione un curso</option>
+        <option value="FISII2025">Laboratorio de Física II</option>
+        <option value="ELEC12025">Laboratorio de Electrónica I</option>
+      </select>
+      <select id="select-grupo">
+        <option value="">Todos los grupos</option>
+        <option value="A">Grupo A</option>
+        <option value="B">Grupo B</option>
+      </select>
+    </section>
+
+    <!-- Tabla de notas -->
+    <section>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Estudiante</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota Final</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="notas-body">
+          <tr data-student-id="2025001">
+            <td>2025001</td>
+            <td>Ana Torres</td>
+            <td><input type="number" value="15" min="0" max="20" class="nota-input"></td>
+            <td><input type="number" value="17" min="0" max="20" class="nota-input"></td>
+            <td><span class="nota-final">16</span></td>
+            <td><button class="btn-save">Guardar</button></td>
+          </tr>
+          <tr data-student-id="2025002">
+            <td>2025002</td>
+            <td>Pedro Ruiz</td>
+            <td><input type="number" value="14" min="0" max="20" class="nota-input"></td>
+            <td><input type="number" value="18" min="0" max="20" class="nota-input"></td>
+            <td><span class="nota-final">16</span></td>
+            <td><button class="btn-save">Guardar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    // Calcular nota final automáticamente cuando cambien las notas
+    document.querySelectorAll('.nota-input').forEach(input => {
+      input.addEventListener('input', () => {
+        const row = input.closest('tr');
+        const notas = Array.from(row.querySelectorAll('.nota-input')).map(i => parseFloat(i.value) || 0);
+        const promedio = (notas.reduce((a, b) => a + b, 0) / notas.length).toFixed(1);
+        row.querySelector('.nota-final').textContent = promedio;
+      });
+    });
+
+    // Guardar nota (simulación)
+    document.querySelectorAll('.btn-save').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const row = btn.closest('tr');
+        const id = row.dataset.studentId;
+        const notas = Array.from(row.querySelectorAll('.nota-input')).map(i => parseFloat(i.value) || 0);
+        const final = row.querySelector('.nota-final').textContent;
+        // Aquí luego harías un fetch/post a tu backend para guardar
+        alert(`Guardando notas de ${id}: ${notas.join(', ')} (Final: ${final})`);
+      });
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      alert('Cerrando sesión...');
+    });
+  </script>
+</body>
+</html>
