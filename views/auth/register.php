@@ -23,26 +23,50 @@ $base_url = "http://localhost/LabIntranet/";
         <section class="login-container">
             <form id="register-form" class="login-form" method="POST" action="controllers/RegisterController.php">
                 <h1>Crear Cuenta</h1>
+
                 <div class="input-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                    <label for="nombres">Nombres</label>
+                    <input type="text" id="nombres" name="nombres" placeholder="Tus nombres" required>
                 </div>
+
                 <div class="input-group">
-                    <label for="email">Correo</label>
-                    <input type="email" id="email" name="email" placeholder="Tu correo" required>
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
                 </div>
+
+                <div class="input-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni" placeholder="Tu número de DNI" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="correo_electronico">Correo</label>
+                    <input type="email" id="correo_electronico" name="correo_electronico" placeholder="Tu correo" required>
+                </div>
+
                 <div class="input-group">
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
                 </div>
+
                 <div class="role-selection">
-                    <label for="role">Selecciona tu rol</label>
-                    <select id="role" name="role" required>
-                        <option value="delegado">Delegado</option>
-                        <option value="instructor">Instructor</option>
-                        <option value="administrador">Administrador</option>
+                    <label for="rol">Selecciona tu rol</label>
+                    <select id="rol" name="rol" required>
+                        <option value="Delegado">Delegado</option>
+                        <option value="Instructor">Instructor</option>
                     </select>
                 </div>
+                
                 <br>
                 <button type="submit" class="btn-login">Registrarse</button>
             </form>

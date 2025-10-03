@@ -29,8 +29,8 @@
 
             <!-- Menú de acciones -->
             <div class="acciones" id="acciones">
-                <button class="btn-iniciar">Iniciar Sesión</button>
-                <button class="btn-registrar">Registrarse</button>
+                <button class="btn-iniciar" onclick="window.location.href='http://localhost/LabIntranet/views/auth/login.php'">Iniciar Sesión</button>
+                <button class="btn-registrar" onclick="window.location.href='http://localhost/LabIntranet/views/auth/register.php'">Registrarse</button>
             </div>
         </div>
     </header>
