@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>LabIntranet</title>
-    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/usuario.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
