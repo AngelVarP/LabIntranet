@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Solicitudes</title>
+    <link rel="stylesheet" href="../../assets/css/administrador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">ADMINISTRADOR</div>
+        <div class="total">
+            <img src="../../assets/images/logo.png" alt="Logo de la UNI" class="imagen__logo"> 
+        </div>
+        <ul>
+            <li><a href="administrador.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="inventario_admin.html"><i class="fas fa-boxes"></i> Gestión de Inventario</a></li>
+            <li class="active"><a href="solicitudes_admin.html"><i class="fas fa-clipboard-list"></i> Solicitudes Pendientes</a></li>
+            <li><a href="usuarios_admin.html"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a></li>
+            <li><a href="reportes_admin.html"><i class="fas fa-chart-line"></i> Reportes Generales</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1 id="pageTitle">Gestión de Solicitudes de Material</h1>
+            <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+        </div>
+
+        <div class="filters">
+            <select id="filtroEstado">
+                <option value="todos">Estado: Todos</option>
+                <option value="pendientes">Estado: Pendiente</option>
+                <option value="aprobado">Estado: Aprobado</option>
+                <option value="rechazado">Estado: Rechazado</option>
+            </select>
+            <select><option>Solicitante: Todos</option><option>Instructor A</option></select>
+            <input type="date" placeholder="Filtrar por Fecha">
+        </div>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Solicitante</th><th>Material</th><th>Cant.</th><th>Fecha Uso</th><th>Estado</th><th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>#005</td><td>Prof. Laura</td><td>Matraz Erlenmeyer (250ml)</td><td>10</td><td>2025-10-15</td><td><span class="badge pending">PENDIENTE</span></td><td><button class="btn-approve">Aprobar</button><button class="btn-reject">Rechazar</button></td></tr>
+                <tr><td>#004</td><td>Prof. Juan</td><td>Pipeta Volumétrica (10ml)</td><td>5</td><td>2025-10-10</td><td><span class="badge pending">PENDIENTE</span></td><td><button class="btn-approve">Aprobar</button><button class="btn-reject">Rechazar</button></td></tr>
+                <tr><td>#003</td><td>Del. Ana</td><td>Termómetro Digital</td><td>2</td><td>2025-10-08</td><td><span class="badge pending">PENDIENTE</span></td><td><button class="btn-approve">Aprobar</button><button class="btn-reject">Rechazar</button></td></tr>
+                <tr><td>#002</td><td>Prof. Luis</td><td>Tubos de Ensayo (Lote)</td><td>1</td><td>2025-10-05</td><td><span class="badge pending">PENDIENTE</span></td><td><button class="btn-approve">Aprobar</button><button class="btn-reject">Rechazar</button></td></tr>
+                <tr><td>#001</td><td>Del. Beto</td><td>Ácido Clorhídrico (1L)</td><td>3</td><td>2025-10-01</td><td><span class="badge pending">PENDIENTE</span></td><td><button class="btn-approve">Aprobar</button><button class="btn-reject">Rechazar</button></td></tr>
+                
+                <tr><td>#000</td><td>Prof. Juan</td><td>Balanza Digital</td><td>1</td><td>2025-09-25</td><td><span class="badge approved">APROBADO</span></td><td><button class="btn-view">Ver Detalle</button></td></tr>
+                <tr><td>#010</td><td>Del. Ana</td><td>Guantes de Nitrilo</td><td>20</td><td>2025-09-20</td><td><span class="badge rejected">RECHAZADO</span></td><td><button class="btn-view">Ver Detalle</button></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../../assets/js/administrador.js"></script>
+</body>
+</html>

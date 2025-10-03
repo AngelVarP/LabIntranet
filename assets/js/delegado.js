@@ -95,5 +95,5 @@ function enviar(id) {
 document.getElementById("cerrarSesion").addEventListener("click", () => {
     localStorage.removeItem("usuario");
     localStorage.removeItem("rol");
-    window.location.href = "../../usuario/index.html";
+    window.location.href = "../../views/usuario/index.html";
 });
