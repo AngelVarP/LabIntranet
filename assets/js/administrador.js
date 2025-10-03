@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // ==========================================================
-    // LÓGICA DE CERRAR SESIÓN (Para todas las páginas del Administrador)
+    // LÓGICA DE CERRAR SESIÓN (Tu código mejorado)
     // ==========================================================
     const logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-            // Elimina cualquier dato de sesión guardado (como solicitaste)
+            // Elimina cualquier dato de sesión guardado
             localStorage.clear(); 
             
             // Redirigir a la página de login (Ajusta la ruta si es necesario)
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================================
     // CHICA LÓGICA DE FILTRADO (Simulación de Backend)
-    // Lee el parámetro de la URL para simular la aplicación de un filtro
     // ==========================================================
     const urlParams = new URLSearchParams(window.location.search);
     const filtro = urlParams.get('filtro');
