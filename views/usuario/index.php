@@ -1,5 +1,5 @@
 <?php
-    $base_url = "http://localhost/mi_proyecto/";
+    $base_url = "http://localhost/LabIntranet/";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,7 +17,7 @@
 
             <div class="logo-wrapper">
                 <div class="logo-box">
-                    <img src="/assets/images/logo.png" alt="Logo" class="icono">
+                    <img src="<?php echo $base_url; ?>assets/images/logo.png" alt="Logo" class="icono">
                 </div>
                 <span class="logo-text">LabIntranet</span>
             </div>
@@ -45,7 +45,7 @@
         <div class="contenedor-cursos">
             
             <div class="curso">
-                <img src="/assets/images/usuario/flask-round.svg" alt="Curso Química" class="curso-logo">
+                <img src="<?php echo $base_url; ?>assets/images/usuario/flask-round.svg" alt="Curso Química" class="curso-logo">
                 <h2 class="curso-nombre">Química</h2>
                 <p class="curso-descripcion">
                     Reactivos, solventes y equipos especializados para experimentos de química orgánica e inorgánica.
@@ -53,7 +53,7 @@
             </div>
 
             <div class="curso">
-                <img src="/assets/images/usuario/atom.svg" alt="Curso Física" class="curso-logo">
+                <img src="<?php echo $base_url; ?>assets/images/usuario/atom.svg" alt="Curso Física" class="curso-logo">
                 <h2 class="curso-nombre">Física</h2>
                 <p class="curso-descripcion">
                     Instrumentos de medición, equipos ópticos y materiales para física experimental.
@@ -66,7 +66,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="/assets/images/logo.png" alt="Logo" class="footer-icon">
+                <img src="<?php echo $base_url; ?>assets/images/logo.png" alt="Logo" class="footer-icon">
                 <span class="footer-text">LabIntranet</span>
             </div>
 

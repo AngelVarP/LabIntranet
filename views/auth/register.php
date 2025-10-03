@@ -1,5 +1,5 @@
 <?php
-// views/auth/register.php
+$base_url = "http://localhost/LabIntranet/";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Laboratorio Intranet</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/styles.css">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="/assets/images/logo.png" alt="Logo Lab Química" class="logo">
+            <img src="<?php echo $base_url; ?>assets/images/logo.png" alt="Logo Lab Química" class="logo">
             <div class="user-info">
                 <h2>Registro de Usuario</h2>
             </div>
@@ -48,7 +48,7 @@
             </form>
 
             <p class="register-text">
-                ¿Ya tienes cuenta? <a href="/views/auth/login.php">Inicia sesión</a>
+                ¿Ya tienes cuenta? <a href="<?php echo $base_url; ?>views/auth/login.php">Inicia sesión</a>
             </p>
         </section>
     </main>

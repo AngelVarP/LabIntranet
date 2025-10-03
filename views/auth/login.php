@@ -1,6 +1,5 @@
 <?php
-// views/auth/login.php
-
+$base_url = "http://localhost/LabIntranet/";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -9,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Laboratorio Intranet</title>
     <!-- Conexión a los estilos -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/styles.css">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="/assets/images/logo.png" alt="Logo Lab Química" class="logo">
+            <img src="<?php echo $base_url; ?>assets/images/logo.png" alt="Logo Lab Química" class="logo">
             <div class="user-info">
                 <h2>Ingreso al Sistema de Inventario</h2>
             </div>
@@ -46,7 +45,7 @@
                 <!-- Texto debajo del botón -->
                 <p class="register-text">
                     ¿No tienes cuenta? 
-                    <a href="/views/auth/register.php">Regístrate aquí</a>
+                    <a href="<?php echo $base_url; ?>views/auth/register.php">Regístrate aquí</a>
                 </p>
             </form>
         </section>

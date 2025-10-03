@@ -69,6 +69,7 @@ main {
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .login-container::before {
@@ -163,7 +164,6 @@ main {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
-    z-index: 1;
     position: relative;
 }
 
@@ -189,6 +189,8 @@ footer {
     margin-top: 15px;
     font-size: 14px;
     color: #555;
+    position: relative; /* para asegurar que esté encima */
+    z-index: 2;
 }
 
 .register-text a {
@@ -196,6 +198,8 @@ footer {
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
+    position: relative;
+    z-index: 3;
 }
 
 .register-text a:hover {
